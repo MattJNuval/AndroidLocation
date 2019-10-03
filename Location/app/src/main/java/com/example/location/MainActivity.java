@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
                 currentLocation.setAltitude(altitude);
 
                 final String locationName = computeLocationName(currentLocation);
-                sumDesc = "Longitude: " + longitude + "\n"
+                sumDesc = "CURRENT VALUES \n"+ "Longitude: " + longitude + "\n"
                         + "Latitude: " + latitude + "\n"
                         + "Altitude: " + altitude + "\n"
                         + "Location Name: " + locationName;
@@ -196,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
                 final double lastAltitude = lastLocation.getAltitude();
                 final String lastLocationName = computeLocationName(lastLocation);
 
-                sumLastDesc = "Last Longitude: " + lastLongitude + "\n"
+                sumLastDesc = "PREVIOUS VALUES \n"+ "Last Longitude: " + lastLongitude + "\n"
                         + "Last Latitude: " + lastLatitude + "\n"
                         + "Last Altitude: " + lastAltitude + "\n"
                         + "Last Location Name: " + lastLocationName;
@@ -208,12 +208,12 @@ public class MainActivity extends AppCompatActivity {
                     distance = RADIUS;
                     resetLastLocation(currentLocation);
                     sumContent += sumLastDesc + "\n"
-                            + computeAverage(lightValues) + " lux";
+                            + computeAverage(lightValues) + " lux" + "\n\n";
                     content.setText(sumContent);
                     lightValues.clear();
                 }
 
-                sumDistance = "Distance: " + distance + " m";
+                sumDistance = "Distance: " + distance + " m / 30.000000 m";
                 distanceText.setText(sumDistance);
 
 
