@@ -27,7 +27,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
     private static final int MAX_LIGHT_STORAGE = 5000;
-    private static final float RADIUS = 30;
+    private static final float RADIUS = 15;
 
 
     private Location currentLocation;
@@ -126,7 +126,6 @@ public class MainActivity extends AppCompatActivity {
         this.desc = (TextView)findViewById(R.id.desc);
         this.light = (TextView)findViewById(R.id.light);
         this.lastDesc = (TextView)findViewById(R.id.lastDesc);
-        this.lastLight = (TextView)findViewById(R.id.lastLight);
         this.content = (TextView)findViewById(R.id.content);
         this.distanceText = (TextView)findViewById(R.id.dist);
 
@@ -188,7 +187,6 @@ public class MainActivity extends AppCompatActivity {
 
                 if(lastLocation == null) {
                     resetLastLocation(currentLocation);
-                    lastLight.setText("Last Light " + 0);
                 }
 
                 final double lastLongitude = lastLocation.getLongitude();
@@ -196,10 +194,11 @@ public class MainActivity extends AppCompatActivity {
                 final double lastAltitude = lastLocation.getAltitude();
                 final String lastLocationName = computeLocationName(lastLocation);
 
-                sumLastDesc = "PREVIOUS VALUES \n"+ "Last Longitude: " + lastLongitude + "\n"
+                sumLastDesc = "Last Longitude: " + lastLongitude + "\n"
                         + "Last Latitude: " + lastLatitude + "\n"
                         + "Last Altitude: " + lastAltitude + "\n"
-                        + "Last Location Name: " + lastLocationName;
+                        + "Last Location Name: " + lastLocationName + "\n"
+                        + "Last Light: " + computeAverage(lightValues) + " lux";
                 lastDesc.setText(sumLastDesc);
 
                 float distance = lastLocation.distanceTo(currentLocation);
@@ -207,13 +206,12 @@ public class MainActivity extends AppCompatActivity {
                 if(distance >= RADIUS) {
                     distance = RADIUS;
                     resetLastLocation(currentLocation);
-                    sumContent += sumLastDesc + "\n"
-                            + computeAverage(lightValues) + " lux" + "\n\n";
+                    sumContent += sumLastDesc + "\n\n";
                     content.setText(sumContent);
                     lightValues.clear();
                 }
 
-                sumDistance = "Distance: " + distance + " m / 30.000000 m";
+                sumDistance = "Distance: " + distance + " m / 15.000000 m";
                 distanceText.setText(sumDistance);
 
 

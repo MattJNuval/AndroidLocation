@@ -5,45 +5,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#3F51B5"
     tools:context=".MainActivity">
     <TextView
         android:id="@+id/desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
         android:layout_marginTop="20dp"
         android:text="Desc"/>
     <TextView
         android:id="@+id/light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
         android:text="Light"/>
+
+    <TextView
+        android:id="@+id/Prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="20dp"
+        android:text="PREVIOUS VALUES"/>
 
     <TextView
         android:id="@+id/lastDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
         android:text="LastDesc"/>
-    <TextView
-        android:id="@+id/lastLight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="LastLight"/>
 
     <TextView
         android:id="@+id/dist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
         android:layout_marginTop="20dp"
         android:text="Dist"/>
-
 
     <TextView
         android:id="@+id/log"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
         android:layout_marginTop="20dp"
         android:text="LOG"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000000"/>
 
 
     <ScrollView
@@ -53,6 +64,7 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
             android:text=""
             android:id="@+id/content"
             />
